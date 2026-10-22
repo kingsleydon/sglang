@@ -398,6 +398,8 @@ REPLICATED_LINEAR_LORA_NAMES = [
     "fc2_latent_proj",
     "wq_a",
     "wkv",
+    "f_a_proj",
+    "g_a_proj",
     *DSA_INDEXER_LORA_NAMES,
 ]
 # Attention-projection LoRA modules shard on the attention-TP group, which
@@ -419,6 +421,9 @@ ATTN_TP_LORA_MODULE_NAMES = frozenset(
         "wq_b",
         "wo_a",
         "wo_b",
+        "b_proj",
+        "f_b_proj",
+        "g_b_proj",
     }
 )
 
@@ -433,6 +438,11 @@ _KNOWN_LORA_TARGET_MODULES = frozenset(
         "out_proj",
         "in_proj",
         "in_proj_qkvz",
+        "b_proj",
+        "f_a_proj",
+        "f_b_proj",
+        "g_a_proj",
+        "g_b_proj",
         "up_proj",
         "gate_up_proj",
         "down_proj",
